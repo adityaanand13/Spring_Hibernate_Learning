@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define your beans here -->
+    <bean
+        id="myFortuneService"
+        class="com.Spring_06_BeanScope.HappyFortuneService">
+    </bean>
+    <bean
+        id="myCoach"
+        class="com.Spring_06_BeanScope.TrackCoach"
+        init-method="initMethod"
+        destroy-method="destroyMethod">
+        <!-- setup constructor injection-->
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+    <bean
+            id="myCricketCoach"
+            class="com.Spring_06_BeanScope.CricketCoach"
+            scope="prototype">
+        <!--        set up a setter injection-->
+        <property name="fortunateService" ref="myFortuneService"/>
+        <!--        inject literal values-->
+        <property name="emailAddress" value="adityaAnand@134.com"/>
+        <property name="team" value="Jai Bihar"/>
+    </bean>
+</beans>
