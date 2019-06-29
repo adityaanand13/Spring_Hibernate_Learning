@@ -21,6 +21,9 @@
         <fileset id="fileset6" name="ApplicationContext (6)" removed="false">
           <file>file://$MODULE_DIR$/src/com/Spring_06_BeanScope/applicationContext.xml</file>
         </fileset>
+        <fileset id="fileset7" name="ApplicationContext (7)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/Spring_07_Annotations/applicationContext.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
