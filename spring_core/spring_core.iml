@@ -3,8 +3,23 @@
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="ApplicationContext" removed="false">
-          <file>file://$MODULE_DIR$/src/Spring_InversionOfControl/applicationContext.xml</file>
+        <fileset id="fileset1" name="ApplicationContext (1)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/Spring_01_InversionOfControl/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="ApplicationContext (2)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/Spring_02_DependencyInjection/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset3" name="ApplicationContext (3)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/Spring_03_SetterInjection/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset4" name="ApplicationContext (4)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/Spring_04_LiteralInjection/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset5" name="ApplicationContext (5)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/Spring_05_InjectingFromPropertyFile/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset6" name="ApplicationContext (6)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/Spring_06_BeanScope/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
