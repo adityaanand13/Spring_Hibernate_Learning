@@ -6,6 +6,9 @@ import com.project.entity.Instructor;
 import com.project.entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class InstructorService {
 
@@ -115,6 +118,38 @@ public class InstructorService {
             //close the session
             session.close();
         }
+    }
+
+    public Instructor getWithCourses(int id){
+        // get the session
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction transaction = null;
+        Instructor instructor = null;
+        try {
+            //start the transaction
+            transaction = session.beginTransaction();
+            // load instructor from db
+            Query<Instructor> query = session.createQuery(
+            "select i from Instructor i " +
+                "JOIN FETCH i.courses " +
+                "WHERE i.id="+id,//add parameter in query
+                Instructor.class
+            );
+            //execute query and get instructor
+            instructor = query.getSingleResult();
+
+            if (instructor==null)
+                System.out.println("Instructor with id: "+id+" not found");
+            //commit transaction
+            transaction.commit();
+        }catch (Exception e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        }finally {
+            //close the session
+            session.close();
+        }
+        return instructor;
     }
 
     public Instructor addCourse(int id, String courseTitle){
