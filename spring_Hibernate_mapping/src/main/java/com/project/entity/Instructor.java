@@ -67,6 +67,8 @@ public class Instructor {
 
     public int getId() { return id; }
 
+    public void setId(int id) { this.id = id; }
+
     public InstructorDetail getInstructorDetail() { return instructorDetail; }
 
     public void setInstructorDetail(InstructorDetail instructorDetail) { this.instructorDetail = instructorDetail; }
@@ -78,9 +80,10 @@ public class Instructor {
     public void addCourse(Course course) {
         if (courses==null)
             courses = new ArrayList<Course>();
-        courses.add(course);
         //bi directional mapping
         course.setInstructor(this);
+
+        courses.add(course);
     }
 
     @Override
