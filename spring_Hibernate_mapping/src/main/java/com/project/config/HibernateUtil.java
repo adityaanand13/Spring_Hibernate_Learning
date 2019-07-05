@@ -1,9 +1,7 @@
 package com.project.config;
 
 
-import com.project.entity.Course;
-import com.project.entity.Instructor;
-import com.project.entity.InstructorDetail;
+import com.project.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -38,6 +36,8 @@ public class HibernateUtil {
                 configuration.addAnnotatedClass(Instructor.class);
                 configuration.addAnnotatedClass(InstructorDetail.class);
                 configuration.addAnnotatedClass(Course.class);
+                configuration.addAnnotatedClass(Review.class);
+                configuration.addAnnotatedClass(Student.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().
                         applySettings(configuration.getProperties())
